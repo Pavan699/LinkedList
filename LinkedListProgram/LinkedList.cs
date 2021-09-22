@@ -4,9 +4,10 @@ using System.Text;
 
 namespace LinkedListProgram
 {
-    class LinkedList<T>
+    class LinkedList<T> where T : IComparable
     {
         public Node<T> head;
+        public Node<T> temphead;
         /// <summary>
         /// Addfirst() method to add all the elements at the First position...
         /// </summary>
@@ -151,6 +152,46 @@ namespace LinkedListProgram
                 node = node.next;
             }
             return false;
+        }
+        /// <summary>
+        /// Sort() method to sort elements
+        /// </summary>
+        /// <param name="value">user input data</param>
+        public void Sort(T value)
+        {
+            Node<T> node = new Node<T>(value);
+            if(this.temphead == null || temphead.data.CompareTo(value) >= 0)
+            {
+                node.next = temphead;
+                temphead = node;
+            }
+            else
+            {
+                Node<T> temp = temphead;
+                while(temp.next != null && temp.next.data.CompareTo(value) <= 0)
+                {
+                    temp = temp.next;
+                }
+                node.next = temp.next;
+                temp.next = node;
+            }
+        }
+        /// <summary>
+        /// PrintSort() Method to print the sorted list list 
+        /// </summary>
+        public void PrintSort()
+        {
+            Node<T> temp = temphead;
+            if (temp == null)
+            {
+                Console.WriteLine("Linked List Is Empty");
+            }
+            while (temp != null)
+            {
+                Console.Write(" " + temp.data);
+                temp = temp.next;
+            }
+            Console.WriteLine();
         }
     }
 }
