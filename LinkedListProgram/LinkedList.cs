@@ -47,6 +47,41 @@ namespace LinkedListProgram
                 temp.next = node;
             }
         }
+        /// <summary>
+        /// Insert() method to the add element to specific position
+        /// </summary>
+        /// <param name="position">It Represent Index where to add the element</param>
+        /// <param name="data">contains the value</param>
+        public void Insert(int position, T data)
+        {
+            if (position < 1)
+            {
+                Console.WriteLine("Wrong Position : {0}", position);
+            }
+            if (position == 1)
+            {
+                var newNode = new Node<T>(data);
+                newNode.next = this.head;
+                head = newNode;
+            }
+            else
+            {
+                Node<T> temp = this.head;
+                while (position-- != 0)
+                {
+                    if (position == 1)
+                    {
+                        Node<T> node = new Node<T>(data);
+                        node.next = temp.next;
+                        temp.next = node;
+                        break;
+                    }
+                    temp = temp.next;
+                }
+                if (position != 1)
+                    Console.WriteLine("Position Out Of Range");
+            }
+        }
 
         /// <summary>
         /// Print() Method to print the list 
