@@ -24,7 +24,10 @@ namespace LinkedListProgram
             llist.Insert(2, 30);
             llist.Print();*/
 
-            llist.DeleteFirst();
+            /*llist.DeleteFirst();
+            llist.Print();*/
+
+            llist.DeleteLast();
             llist.Print();
         }
 

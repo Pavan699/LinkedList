@@ -110,5 +110,29 @@ namespace LinkedListProgram
             }
             head = head.next;
         }
+
+        /// <summary>
+        /// DeleteLast() Method to remove the elements from Last position
+        /// </summary>
+        public void DeleteLast()
+        {
+            Node<T> temp = this.head;
+            if (this.head == null)
+            {
+                Console.WriteLine("List is Empty");
+            }
+            if (head.next == null)
+            {
+                head = null;
+            }
+            else
+            {
+                while (temp.next.next != null)
+                {
+                    temp = temp.next;
+                }
+                temp.next = null;
+            }
+        }
     }
 }
