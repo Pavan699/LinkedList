@@ -27,6 +27,28 @@ namespace LinkedListProgram
         }
 
         /// <summary>
+        /// Append method to add the elements at the last....
+        /// </summary>
+        /// <param name="data">data contains the value</param> 
+        public void Append(T data)
+        {
+            Node<T> node = new Node<T>(data);
+            if (this.head == null)
+            {
+                this.head = node;
+            }
+            else
+            {
+                Node<T> temp = head;
+                while (temp.next != null)
+                {
+                    temp = temp.next;
+                }
+                temp.next = node;
+            }
+        }
+
+        /// <summary>
         /// Print() Method to print the list 
         /// </summary>
         public void Print()
