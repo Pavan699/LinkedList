@@ -27,8 +27,19 @@ namespace LinkedListProgram
             /*llist.DeleteFirst();
             llist.Print();*/
 
-            llist.DeleteLast();
-            llist.Print();
+            /*llist.DeleteLast();
+            llist.Print();*/
+
+            bool check = llist.Search(30);
+            if(check == true)
+            {
+                Console.WriteLine("Element {0} is Present",30);
+            }
+            else
+            {
+                Console.WriteLine("Element {0} is Absent", 30);
+            }
+
         }
 
     }

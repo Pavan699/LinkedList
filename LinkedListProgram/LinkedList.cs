@@ -134,5 +134,23 @@ namespace LinkedListProgram
                 temp.next = null;
             }
         }
+        /// <summary>
+        /// Search method to search the element 
+        /// </summary>
+        /// <param name="elem"></param>
+        public bool Search(T elem)
+        {
+            Node<T> node = head;
+
+            while (node != null)
+            {
+                if (node.data.Equals(elem))
+                {
+                    return true;
+                }
+                node = node.next;
+            }
+            return false;
+        }
     }
 }
