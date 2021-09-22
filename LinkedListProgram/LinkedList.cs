@@ -82,7 +82,6 @@ namespace LinkedListProgram
                     Console.WriteLine("Position Out Of Range");
             }
         }
-
         /// <summary>
         /// Print() Method to print the list 
         /// </summary>
@@ -99,6 +98,17 @@ namespace LinkedListProgram
                 temp = temp.next;
             }
             Console.WriteLine();
+        }
+        /// <summary>
+        /// DeleteFirst() Method to remove the elements from first position
+        /// </summary>
+        public void DeleteFirst()
+        {
+            if (this.head == null)
+            {
+                Console.WriteLine("List is Empty");
+            }
+            head = head.next;
         }
     }
 }
